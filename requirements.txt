@@ -12,3 +12,5 @@ openai
 google-generativeai
 
 python-dotenv
+
+pydantic==2.7.4
