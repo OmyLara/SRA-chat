@@ -1,9 +1,8 @@
 import os
-import json
 import streamlit as st
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+
 
 # Configuración de la página web
 st.set_page_config(page_title="SwimRight Assistant", page_icon="🏊🏼‍♂️", layout="centered")

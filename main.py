@@ -1,8 +1,6 @@
 import json
 import os
 from langchain_openai import OpenAIEmbeddings
-###IN CASE I USE GEMINI###
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 
@@ -32,7 +30,7 @@ def cargar_datos_a_vector_db():
         print(f"❌ Error: No se encontró el archivo '{ruta_jsonl}' en esta carpeta.")
         return
 
-    print("📖 Leyendo tu archivo JSONL de juegos de mesa...")
+    print("📖 Leyendo tu archivo JSONL de SRA...")
     documentos = []
     
     # 2. Leer el archivo JSONL
@@ -44,7 +42,7 @@ def cargar_datos_a_vector_db():
                 
                 doc = Document(
                     page_content=texto_completo,
-                    metadata={"fuente": "juegos_jsonl"}
+                    metadata={"fuente": "SRA_jsonl"}
                 )
                 documentos.append(doc)
 
