@@ -1,15 +1,11 @@
 streamlit
 
-langchain==0.2.11
-langchain-community==0.2.10
-langchain-core==0.2.38
-langchain-openai==0.1.22
-
-chromadb==0.5.5
-
 openai
 
+langchain
+langchain-community
+langchain-openai
+
+chromadb
 
 python-dotenv
-
-pydantic==2.7.4
