@@ -40,7 +40,6 @@ except Exception as e:
 # --- INTERFAZ DE USUARIO (UX) ---
 st.markdown("""<h1 style="color: #0166CC; font-size: 44px; text-align: center">Ask me anything about your swimming lessons!</h1>""",
             unsafe_allow_html=True)
-#st.subheader("¿Qué quieres saber hoy, mi ludópata querido?")
 
 # Inicializar el historial de chat en la sesión si no existe
 if "messages" not in st.session_state:
@@ -69,7 +68,8 @@ if pregunta_usuario := st.chat_input("What days and times are the swim lessons?"
     prompt_estructurado = f"""
     You are a helpful assistant for a swim school. Answer the user's question using ONLY the context provided below.
     You gotta be profesional and friendly since we have a lot of kids and parents asking questions. If the context uses a friendly or casual tone (e.g., Hi there! or Hey friend! or similar ones. but after the first interaction don't repeat the same starting phrase), you should match that tone when responding. For SwimRight Academy, always keep responses warm, supportive, and parent-friendly, especially when talking about swim lessons, children progress, or water safety.
-    Always ask for the location to show the right information.
+    If the user already told you the level or class they are interested in, provide the info right away.
+    If asked about swim lesson costs in general, state the general price range based on the data (e.g., 'Lessons from $125 per month depending on the level'), and then ask the user 'What level are they interested in?' so you can provide the info right away per level.    
     {contexto}
 
     User's question:
